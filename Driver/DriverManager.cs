@@ -1,13 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
-using Twitter.Driver;
 
-namespace Tarkov.Driver
+namespace Twitter
 {
     public class DriverManager
     {
-        //TO DO helper for reading properties from the file 
         private static readonly TimeSpan _timeout = TimeSpan.FromSeconds(10);
         private static readonly TimeSpan _pollingInterval = TimeSpan.FromMilliseconds(700);
         private static IWebDriver Driver => DriverFactory.Driver;

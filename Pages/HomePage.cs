@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
-using Tarkov.ElementWrapper;
 
-namespace Tarkov.Pages
+namespace Twitter
 {
     public class HomePage : BasePage
     {

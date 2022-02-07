@@ -1,8 +1,6 @@
 ﻿using OpenQA.Selenium;
-using Tarkov.Driver;
-using Twitter.Driver;
 
-namespace Tarkov.Pages
+namespace Twitter
 {
     public class BasePage
     {

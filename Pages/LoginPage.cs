@@ -1,12 +1,6 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tarkov.ElementWrapper;
 
-namespace Twitter.Pages
+namespace Twitter
 {
     public class LoginPage
     {
@@ -15,6 +9,7 @@ namespace Twitter.Pages
         private Button _loginButton => new Button(By.XPath("//span[text()='Log in']"));
         private TextBox _loginField => new TextBox(By.XPath("//input[@name='text']"));
         private TextBox _passwordField => new TextBox(By.XPath("//input[@name='password']"));
+        private TextBox _phoneOrUsernameField => new TextBox(By.XPath("//input[@data-testid]"));
 
         public void ClickOnSighInButton()
         {
@@ -24,6 +19,11 @@ namespace Twitter.Pages
         public void EnterValueIntoLoginField(string login)
         {
             _loginField.SetText(login);
+        }
+
+        public void EnterValueIntoPhoneOrUsernameField(string phoneValue)
+        {
+            _phoneOrUsernameField.SetText(phoneValue);
         }
 
         public void EnterValueIntoPasswordField(string password)

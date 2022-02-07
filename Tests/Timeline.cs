@@ -1,27 +1,32 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Twitter.Tests
 {
     public class Timeline : BaseTest
     {
-
         private string login = "vanyavince@gmail.com";
         private string password = "Tarakan!0508";
+        private string phone = "+375293539222";
+        
+        private string urlSendTweetAPI = "https://api.twitter.com/1.1/statuses/update.json";
+        private string message = SystemHelper.GetRandomValue();
+        private TwitterAPI _twitterAPI;
+
+        [SetUp]
+        public override void Setup()
+        {
+            _twitterAPI = new TwitterAPI(urlSendTweetAPI);
+            _twitterAPI.SendTweet(message);
+            OpenUrl();
+        }
 
         [Test]
         public void VerifyTweetPostedAfterApiRequest()
         {
-            //Thread.Sleep(7000);
-            LoginPageSteps.Login(login, password);
-            Thread.Sleep(7000);
+            LoginPageSteps.Login(login, phone, password);
+            HomePageSteps.ProceedToProfilePage();
 
-
+            Assert.IsTrue(ProfilePageSteps.IsTweetDisplayed(message));
         }
     }
 }

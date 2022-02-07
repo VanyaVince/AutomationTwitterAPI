@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Twitter
 {
     public class AutorizationHeaderBulder
     {
-        private string _oauthConsumerKey = "nYF5IEPDzOUHhq1NoCwZ7lHEK";
-        private string _oauthConsumerSecret = "Kty25lZrQOdLvOBr3TiYDhaoUvRYGQrTMp7yenf220aojxLUBR";
-        private string _oauthAccessToken = "1488147999423447042-g6KqBeJWjtKWwMEb0aNQoNeM44Am3y";
-        private string _oauthTokenSecret = "Cjf3iGpa74dWJe7wpKzjABRMiBFfIzAZrfLpInhALF903";
+        private string _oauthConsumerKey = "inzRlX2V0NSfGC32A4YugXQQU";
+        private string _oauthConsumerSecret = "TLOdL9hLyocunIhPOqHdNtIWlWLc1C7ztNEO1B6cYqu2BvahSC";
+        private string _oauthAccessToken = "1488147999423447042-2V6rFID8gKbSTAAkw3Q11OFfutRijO";
+        private string _oauthTokenSecret = "lgnOMnDmjYh3HYpOD3OIFn1758IjqwHlthNDcw5Iy2PIQ";
 
         public string _oauth_signature_method = "HMAC-SHA1";
         public string _oauthVersionMethod = "1.0";

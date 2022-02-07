@@ -1,8 +1,5 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
-using System.Threading;
-using Twitter.Driver;
-using Twitter.Steps;
 
 namespace Twitter
 {
@@ -11,12 +8,13 @@ namespace Twitter
         protected IWebDriver Driver => DriverFactory.Driver;
 
         protected LoginPageSteps LoginPageSteps = new LoginPageSteps();
+        protected HomePageSteps HomePageSteps = new HomePageSteps();
+        protected ProfilePageSteps ProfilePageSteps = new ProfilePageSteps();
 
         [SetUp]
-        public void Setup()
+        public virtual void Setup()
         {
-            Driver.Navigate().GoToUrl("https://twitter.com");
-            Driver.Manage().Window.Maximize();
+            OpenUrl();
         }
 
         [TearDown]
@@ -24,6 +22,12 @@ namespace Twitter
         {
             Driver.Quit();
             Driver.Dispose();
+        }
+
+        protected void OpenUrl()
+        {
+            Driver.Navigate().GoToUrl("https://twitter.com");
+            Driver.Manage().Window.Maximize();
         }
     }
 }

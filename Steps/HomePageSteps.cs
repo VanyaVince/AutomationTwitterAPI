@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Twitter.Steps
+﻿namespace Twitter
 {
-    internal class HomePageSteps
+    public class HomePageSteps
     {
+        private readonly HomePage _homePage;
+
+        public HomePageSteps()
+        {
+            _homePage = new HomePage();
+        }
+
+        public void ProceedToProfilePage()
+        {
+            _homePage.ClickOnProfileButton();
+        }
     }
 }

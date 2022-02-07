@@ -2,10 +2,8 @@
 using OpenQA.Selenium.Interactions;
 using System;
 using System.Linq;
-using Tarkov.Driver;
-using Twitter.Driver;
 
-namespace Tarkov.ElementWrapper
+namespace Twitter
 {
     public class BaseElement
     {
@@ -80,8 +78,7 @@ namespace Tarkov.ElementWrapper
             { 
                 if (Element != null)
                 {
-                    Console.WriteLine(Element.Text);
-                    return Element.Displayed;
+                   return Element.Displayed;
                 }
 
                 return false; 
